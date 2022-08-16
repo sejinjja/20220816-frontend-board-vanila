@@ -6,9 +6,23 @@
   <title>vanilla-board</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='./src/main.js'>
+  </script>
+  <script>
+    console.log('$sj', $sj)
+    let testCode = 0
+    function pushState(path) {
+      const newPath = `${path}${testCode++}`
+      $sj.router.push(newPath)
+      const testElement = document.createElement('div')
+      testElement.innerText = newPath
+      document.body.appendChild(testElement)
+    }
+  </script>
 </head>
 
 <body>
+<button type='button' onclick='pushState("test")'>페이지 이동.</button>
 </body>
 
 </html>
